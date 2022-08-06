@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 40px;
+            background: #b10d;
+            font-family: "Helvetica Neue",Helvetica;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        .search-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        #search-bar {
+           width: 60%;
+           height: 40px;
+           font-size: 20px; 
+        }
+        .adventures-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            margin: 40px;
+        }
+        .adventure {
+            width: 120px;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>Find your local Adventure</h1>
+<div class="search-container"><input id='search-bar' 
+    type="text" placeholder="Search"></input></div>
+<div class="adventures-container">
+    <div class="adventure">Mountain Bike  Tour</div>
+    <div class="adventure">Hinterlands Tour</div>
+    <div class="adventure">Sky Diving</div>
+    <div class="adventure">Food Festival</div>
+    <div class="adventure">Hiking</div>
+    <div class="adventure">Snorkelling</div>
+</div>
+    <script>
+        var adventureList = [];
+        var adventures = document.getElementsByClassName('adventure');
+        for (let i = 0; i < adventures.length; i++){
+            let adventuresName = adventures[i].innerHTML;
+            adventurelist.push(adventuresName);
+        }
+
+        let searchBar = document.getElementById('search-bar');
+        searchBar.addEventListener('keyup',function(event){
+            var text = searchBar.value;
+        });
+    </script>
+</body>
+</html>
