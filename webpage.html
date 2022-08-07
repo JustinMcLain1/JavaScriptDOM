@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ 
+            padding: 40px;
+            font-family: "Helvetica Neue",Helvetica,Arial;
+        }
+        .container {
+           position: absolute;
+           left: 0;
+           right: 0;
+           top: 0;
+           bottom: 0;
+           margin: auto;
+           padding: 10px;
+           width: 200px;
+           height: 300px;
+           border: thick solid #9900ff;
+           background-color: #00ffaa;
+        }
+        .textInput {
+            margin-bottom: 10px;
+            width: 95%;
+        }
+        #petSelection {
+          margin-top: 10px;
+          display: none;
+        }
+        #saveButton {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            background-color: #9900ff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="saveForm">
+            Name: <br><input class="textInput" type="text"><br>
+            Address: <br><input class="textInput" type="text"><br>
+            Age: <br><input class="textInput" type="text"><br>
+            Pets: <br><input id="petCheckBox"
+            type="checkbox"><br>
+            <div id="petSelection">
+                Pet: <br><select> 
+                    <option value="">Dog</option> 
+                    <option value="">Cat</option> 
+                    <option value="">Bird</option> 
+                    <option value="">Other</option> 
+                 </select><br>
+            </div>
+            <br><input id="saveButton" value="Save" type="submit">
+        </form>
+    </div>
+
+    <script>
+       //this is for the check box to hide or show if user has pets
+       var checkBox = document.getElementById("petCheckBox");
+       var selectionDiv = document.getElementById("petSelection");
+        checkBox.addEventListener('change', function(event){
+            if(checkBox.checked == true) {
+                selectionDiv.style.display = "Block";
+            }
+            else {
+                selectionDiv.style.display = "None";
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
